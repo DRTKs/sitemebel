@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+     <header>
         <div class="container header-inner">
             <a href="index.html" class="logo">NORDA <span>LIVING</span></a>
             <nav>
@@ -17,6 +17,10 @@
                     <li><a href="about.html">О нас</a></li>
                 </ul>
             </nav>
+            <div style="position: relative;">
+                <span style="font-size: 28px; cursor: pointer;">🛒</span>
+                <span id="cartBadge" style="display: none; position: absolute; top: -8px; right: -12px; background: #C25D3A; color: #fff; border-radius: 50%; padding: 2px 8px; font-size: 12px; font-weight: 700;">0</span>
+            </div>
         </div>
     </header>
     <section class="hero">
@@ -27,7 +31,7 @@
                 <a href="catalog.html" class="btn-primary">Перейти в каталог</a>
             </div>
             <div class="hero-image">
-                <img src="img/норд.jpg" alt="Интерьер в стиле NORDA LIVING">
+                <img src="img/норд.jpg" alt="Интерьер NORDA LIVING">
             </div>
         </div>
     </section>
@@ -53,27 +57,39 @@
     <div class="container">
         <h2 class="section-title">Лучшие новинки сезона</h2>
         <div class="catalog-grid">
-            <!-- Карточка 1 -->
             <div class="product-card">
                 <img src="img/креслокачалка.jpg" alt="Кресло-качалка">
                 <h3>Кресло-качалка «Хюгге»</h3>
                 <div class="price">34 990 ₽</div>
-                <a href="#" class="btn-secondary">В корзину</a>
+                <a href="product.html" class="btn-secondary">Подробнее</a>
             </div>
-            <!-- Карточка 2 -->
             <div class="product-card">
                 <img src="img/столобеден.jpg" alt="Обеденный стол">
                 <h3>Стол обеденный «Сканди»</h3>
                 <div class="price">28 500 ₽</div>
-                <a href="#" class="btn-secondary">В корзину</a>
+                <a href="product.html" class="btn-secondary">Подробнее</a>
             </div>
-            <!-- Карточка 3 -->
             <div class="product-card">
                 <img src="img/кровать.png" alt="Кровать">
                 <h3>Кровать</h3>
                 <div class="price">72 300 ₽</div>
-                <a href="#" class="btn-secondary">В корзину</a>
+                <a href="product.html" class="btn-secondary">Подробнее</a>
             </div>
+        </div>
+    </div>
+    <div class="container" style="margin-bottom: 60px;">
+        <h2 class="section-title">Калькулятор <span style="color: #C25D3A;">доставки</span></h2>
+        <div style="background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); max-width: 600px; margin: 0 auto;">
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Расстояние (км):</label>
+                <input type="number" id="deliveryDistance" placeholder="Введите расстояние" style="width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 10px; font-size: 16px;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Вес товара (кг):</label>
+                <input type="number" id="deliveryWeight" placeholder="Введите вес" style="width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 10px; font-size: 16px;">
+            </div>
+            <button id="calculateDelivery" class="btn-primary" style="width: 100%; text-align: center;">Рассчитать стоимость</button>
+            <div id="deliveryResult" style="display: none; margin-top: 20px; padding: 20px; background: #FDFBF7; border-radius: 12px; border: 2px solid #C25D3A;"></div>
         </div>
     </div>
     <footer>
@@ -94,7 +110,7 @@
                     <h4>Информация</h4>
                     <a href="#">Политика конфиденциальности</a>
                     <a href="#">Условия возврата</a>
-                    <a href="#">О бренде</a>
+                    <a href="about.html">О бренде</a>
                 </div>
                 <div class="footer-col">
                     <h4>Мы в соцсетях</h4>
